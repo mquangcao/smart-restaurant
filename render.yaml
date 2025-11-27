@@ -14,7 +14,7 @@ services:
         fromService:
           name: multi-tenant-restaurant-system 
           type: web
-          property: url
+          property: host
 
   - type: web
     name: multi-tenant-restaurant-system 
@@ -31,5 +31,5 @@ services:
         fromService:
           name: multi-tenant-restaurant-backend
           type: web
-          property: url
+          property: host
 version: '1'
