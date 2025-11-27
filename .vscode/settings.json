@@ -1,0 +1,56 @@
+{
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "liveServer.settings.root": "/apps/web/dist",
+  "eslint.enable": true,
+  "eslint.useFlatConfig": true,
+  "eslint.codeActionsOnSave.mode": "problems",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "eslint.format.enable": true,
+  "eslint.workingDirectories": [
+    {
+      "mode": "auto"
+    }
+  ],
+  "editor.formatOnSaveMode": "file",
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "markdown",
+    "json",
+    "jsonc",
+    "yaml",
+    "toml",
+    "xml",
+    "gql",
+    "github-actions-workflow"
+  ],
+  "javascript.preferences.importModuleSpecifier": "shortest",
+  "prettier.requireConfig": true,
+  "prettier.singleQuote": true,
+  "search.exclude": {
+    "package-lock.json": true
+  },
+  "typescript.enablePromptUseWorkspaceTsdk": true,
+  "typescript.preferences.importModuleSpecifier": "shortest",
+  "typescript.preferences.preferTypeOnlyAutoImports": true,
+  "typescript.suggest.autoImports": true,
+  "github.copilot.chat.commitMessageGeneration.instructions": [
+    {
+      "text": "Use conventional commit message format. Less than 72 characters, usng Conventional Commits: https://www.conventionalcommits.org/en/v1.0.0/"
+    },
+    {
+      "text": "Pattern: <type>(<project | web |api>-<scope>): <subject>"
+    }
+  ],
+  "markdownlint.config": {
+    "MD041": false,
+    "MD033": false,
+    "MD053": false,
+    "MD047": false,
+    "MD014": false,
+    "MD040": false
+  }
+}

@@ -1,0 +1,35 @@
+services:
+  - type: web
+    name: multi-tenant-restaurant-backend
+    runtime: docker
+    repo: https://github.com/mquangcao/smart-restaurant
+    buildFilter:
+      paths:
+        - apps/api/**
+    plan: free
+    dockerContext: .
+    dockerfilePath: ./apps/api/Dockerfile
+    envVars:
+      - key: ALLOW_ORIGIN_URL
+        fromService:
+          name: multi-tenant-restaurant-system 
+          type: web
+          property: url
+
+  - type: web
+    name: multi-tenant-restaurant-system 
+    runtime: docker
+    repo: https://github.com/mquangcao/smart-restaurant
+    buildFilter:
+      paths:
+        - apps/web/**
+    plan: free
+    dockerContext: .
+    dockerfilePath: ./apps/web/Dockerfile
+    envVars:
+      - key: VITE_API_BASE_URL
+        fromService:
+          name: multi-tenant-restaurant-backend
+          type: web
+          property: url
+version: '1'
