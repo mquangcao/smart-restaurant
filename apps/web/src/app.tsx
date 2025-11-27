@@ -9,6 +9,7 @@ function App() {
     setResponse('');
 
     try {
+      console.log('check backend: ' + import.meta.env.VITE_API_BASE_URL);
       const res = await fetch(import.meta.env.VITE_API_BASE_URL, {
         method: 'GET',
         headers: {
