@@ -1,0 +1,20 @@
+import { Injectable } from '@nestjs/common';
+import { InjectRepository } from '@nestjs/typeorm';
+
+import { Repository } from 'typeorm';
+
+import { UserEntity } from '../entities/user.entity';
+
+@Injectable()
+export class AccountUserService {
+  constructor(
+    @InjectRepository(UserEntity)
+    private readonly userRepo: Repository<UserEntity>,
+  ) {}
+
+  async findByUsernameOrEmail(identifier: string): Promise<UserEntity | null> {
+    return this.userRepo.findOne({
+      where: [{ username: identifier }, { email: identifier }],
+    });
+  }
+}

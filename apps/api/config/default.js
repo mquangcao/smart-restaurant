@@ -14,4 +14,8 @@ module.exports = {
       logging: false,
     },
   },
+  token: {
+    secret: 'your_jwt_secret_key',
+    expiresIn: 3600, // in seconds
+  },
 };
