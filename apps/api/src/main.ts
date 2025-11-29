@@ -8,11 +8,9 @@ async function bootstrap() {
 
   app.enableCors({
     origin: getConfig('allowOriginUrl'),
-    methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH'],
+    methods: '*',
     credentials: true,
   });
-
-  console.log('CORS ORIGIN:', getConfig('allowOriginUrl'));
 
   await setupBootstrap(app);
 }

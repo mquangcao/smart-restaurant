@@ -3,6 +3,12 @@
   "extends": "@app/typescript-config/nestjs.json",
   "compilerOptions": {
     "outDir": "./dist",
-    "baseUrl": "./"
+    "baseUrl": "./",
+    "paths": {
+      "@app/common": ["src/common/"],
+      "@app/common/*": ["src/common/*"],
+      "@app/core": ["src/core"],
+      "@app/core/*": ["src/core/*"]
+    }
   }
 }

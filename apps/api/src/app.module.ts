@@ -1,9 +1,7 @@
+import { CoreModule } from '@app/core';
 import { Module } from '@nestjs/common';
 
-import { AppController } from './app.controller';
-
 @Module({
-  imports: [],
-  controllers: [AppController],
+  imports: [CoreModule.forRoot()],
 })
 export class AppModule {}
